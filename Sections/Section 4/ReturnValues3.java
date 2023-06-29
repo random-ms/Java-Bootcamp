@@ -13,6 +13,7 @@ public class ReturnValues3 {
 
         System.out.println("\nPlease enter length: \t");
         Double length = scan.nextDouble();
+        
         System.out.println("\nPlease enter width: \t");
         Double width = scan.nextDouble();
 
