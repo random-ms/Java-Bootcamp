@@ -5,9 +5,19 @@ public class RockPaperScissors {
         
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Let's play Rock Paper Scissors.");
-        System.out.println("When I say 'shoot', Choose: rock, paper, or scissors.\n");
-        System.out.println("Are you ready? Write 'yes' if you are.");
+        System.out.println("\nLet's play Rock Paper Scissors.");
+        System.out.println("\nWhen I say 'shoot', Choose: rock, paper, or scissors.\n");
+        System.out.println("\nAre you ready? Write 'yes' if you are.");
+
+        String userDecisionToPlay = scan.nextLine();
+        playGame(userDecisionToPlay);
+
+        System.out.println("\nrock - paper - scissors, shoot!");
+        String yourChoice =
+
+
+
+     
 
     //Task 1: See if the user wants to play. 
 
@@ -30,7 +40,14 @@ public class RockPaperScissors {
         scan.close();
     }
 
-
+        public static void playGame(String decision){
+            if (decision.equals("yes")){
+                System.out.println("Great");
+            } else {
+                System.out.println("Darn, some other time...! ");
+            }
+        }
+                                                    }
     //Task 3  – Write a function where the computer picks a random choice.
 
     /**
@@ -44,6 +61,20 @@ public class RockPaperScissors {
      *      if 2: returns the choice 'scissors'
      */
 
+     public static String computerChoice(String randomNumber){
+        Double randomGen = Math.random() * 4;
+
+       switch ((int)randomGen) {
+        case 1:
+        case 2:
+        case 3:
+            
+          
+       
+        default:
+           
+       } 
+     }
 
 
 
