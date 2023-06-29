@@ -4,15 +4,16 @@ public class ReturnValues3 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Hi, please enter prefered language output 1-3: " +
+        System.out.println("Hi, please enter prefered language output 1-3: \t" +
         "\n1. English \n2. French \n3. Spanish\t");
 
         int choice = scan.nextInt();
-        explainArea(choice);
+        String langChoice = explainArea(choice);
+        System.out.println("\n" + langChoice);
 
         System.out.println("\nPlease enter length: \t");
         Double length = scan.nextDouble();
-        System.out.println("Please enter width: \t");
+        System.out.println("\nPlease enter width: \t");
         Double width = scan.nextDouble();
 
         Double area = calculateArea(length, width);
@@ -40,6 +41,6 @@ public class ReturnValues3 {
 
 
         public static void printArea(double length, double width, double area){
-            System.out.println("A rectangle with a length of " + length + ", and a width of " + width + ", has an area of " + area);
+            System.out.println("\nA rectangle with a length of " + length + ", and a width of " + width + ", has an area of " + area);
         }
     }
