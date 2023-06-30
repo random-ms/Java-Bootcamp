@@ -13,7 +13,7 @@ public class RockPaperScissors {
         playGame(userDecisionToPlay);
 
         System.out.println("\nrock - paper - scissors, shoot!");
-        String yourChoice =
+        String yourChoice = scan.nextLine();
 
 
 
