@@ -24,7 +24,7 @@ public class RockPaperScissors {
     }
 
         public static void playGame(String decision){
-            if (decision.equals("yes") || decision.equals("Yes")){
+            if (decision.equals("yes")){
                 System.out.println("Great");
             } else {
                 System.out.println("Darn, some other time...! ");
@@ -48,25 +48,28 @@ public class RockPaperScissors {
         String result = "";
 
         if (yourChoice.equals("rock") && computerChoice.equals("scissors")){
-            if(yourChoice.equals("paper") && computerChoice.equals("rock")){
-                if(yourChoice.equals("scissors") && computerChoice.equals("paper"))
+            result = "You win!";
+            } else if(yourChoice.equals("paper") && computerChoice.equals("rock")){
                 result = "You win!";
-            }
-        } else if (yourChoice.equals("rock") && computerChoice.equals("scissors")){
-            if(yourChoice.equals("paper") && computerChoice.equals("rock")){
-                if(yourChoice.equals("scissors") && computerChoice.equals("paper")){
+            } else if(yourChoice.equals("scissors") && computerChoice.equals("paper")){
+                result = "You win!"; 
+            } else if (yourChoice.equals("rock") && computerChoice.equals("scissors")){
                 result = "You lose!";
-                }
+            } else if(yourChoice.equals("paper") && computerChoice.equals("rock")){
+                result = "You lose!";
+            } else if(yourChoice.equals("scissors") && computerChoice.equals("paper")){
+                result = "You lose!";
+            } else if (yourChoice.equals(computerChoice)){
+                result = "It's a tie!";
+            } else {
+                result = "INVALID CHOICE";
+                System.exit(0);
             }
-        } else {
-            result = "INVALID CHOICE";
-            System.exit(0);
-        }
         return result;
       }
 
       public static void printResult(String yourChoice, String computerChoice, String result){
-        System.out.println("\nYou chose " + yourChoice + 
+        System.out.println("\nYou chose: " + yourChoice + 
                             ".\nThe computer chose: " + computerChoice + result);
       }
 }
