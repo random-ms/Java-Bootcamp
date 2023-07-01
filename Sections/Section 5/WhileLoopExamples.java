@@ -4,6 +4,12 @@ public class WhileLoopExamples {
         // Example 1: Roll a dice until a 6 is rolled
         // TODO: Write a while loop that simulates rolling a dice until a 6 is rolled
 
+        int diceRoll = -1;
+        while (diceRoll != 6){
+            diceRoll = rollDice();
+            System.out.print(diceRoll + " ");
+        }
+
         // Example 2: Generate random numbers between 1 and 100 until a number greater than 90 is generated
         // TODO: Write a while loop that generates random numbers between 1 and 100 until a number greater than 90 is generated
 
