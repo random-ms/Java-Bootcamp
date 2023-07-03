@@ -27,7 +27,7 @@ public class Doubles {
      */
     public static int rollDice() {
         double randomNumber = Math.random() * 6;
-        randomNumber = randomNumber + 1;
+        randomNumber = randomNumber + 1; // or randomNumber+=1;
         return (int)randomNumber;
     }
 
