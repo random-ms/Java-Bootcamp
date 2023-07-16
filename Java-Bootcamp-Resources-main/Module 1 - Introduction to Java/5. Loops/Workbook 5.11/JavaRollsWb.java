@@ -29,6 +29,7 @@ public class JavaRollsWb {
                 score++;
                 System.out.println("One point. Keep rolling.");
             }
+        }
             
             System.out.println("\nYour score is: " + score);
 
@@ -37,8 +38,7 @@ public class JavaRollsWb {
             } else {
                 System.out.println("\nTough luck, you lose :(");
             }
-            
-        }
+        
         scan.close();
     }
 
