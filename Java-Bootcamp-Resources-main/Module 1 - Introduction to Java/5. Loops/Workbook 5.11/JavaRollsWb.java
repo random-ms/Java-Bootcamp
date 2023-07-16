@@ -29,6 +29,13 @@ public class JavaRollsWb {
                 score++;
                 System.out.println("One point. Keep rolling.");
             }
+            
+            if(score>=3){
+                System.out.println("\nWow, that's lucky. You win!");
+            } else {
+                System.out.println("\nTough luck, you lose :(");
+            }
+            scan.close();
         }
 
     }
