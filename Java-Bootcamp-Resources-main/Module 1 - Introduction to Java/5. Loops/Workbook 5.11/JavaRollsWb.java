@@ -31,13 +31,6 @@ public class JavaRollsWb {
             }
         }
 
-        if(score>=3){
-            System.out.println("\nWow, that's lucky. You win!");
-        } else {
-            System.out.println("\nTough luck, you lose :(");
-        }
-        scan.close();
-
     }
 
     public static int rollDice(){
