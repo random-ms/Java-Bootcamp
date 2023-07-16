@@ -20,24 +20,26 @@ public class JavaRollsWb {
             scan.nextLine();
             diceRoll = rollDice();
             System.out.println("You rolled a " + diceRoll + ".");
-            if (diceRoll==6){
+            if (diceRoll == 6){
                 System.out.println("End of game.");
                 break;
-            } else if (diceRoll==4){
+            } else if (diceRoll == 4){
                 System.out.println("\nZero points. Keep rolling.");
             } else {
                 score++;
                 System.out.println("One point. Keep rolling.");
             }
             
-            if(score>=3){
+            System.out.println("\nYour score is: " + score);
+
+            if(score >= 3){
                 System.out.println("\nWow, that's lucky. You win!");
             } else {
                 System.out.println("\nTough luck, you lose :(");
             }
-            scan.close();
+            
         }
-
+        scan.close();
     }
 
     public static int rollDice(){
