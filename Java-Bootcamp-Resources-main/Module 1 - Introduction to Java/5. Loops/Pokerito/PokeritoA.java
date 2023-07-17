@@ -49,8 +49,8 @@ public class PokeritoA {
         String computerCard = randomCard();
 
 
-        System.out.println("Here is your card " + yourCard + "\n");
-        System.out.println("Here's the computer's card: " + computerCard);
+        System.out.println("Here is your card \n" + yourCard + "\n");
+        System.out.println("Here's the computer's card: \n" + computerCard);
 
         /** Task 4 - Draw five cards
          * 
