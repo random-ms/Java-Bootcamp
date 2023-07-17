@@ -19,15 +19,15 @@ public class JavaRollsWb {
         while (true) {
             scan.nextLine();
             diceRoll = rollDice();
-            System.out.println("You rolled a " + diceRoll + ".");
+            System.out.println("\nYou rolled a " + diceRoll + ".");
             if (diceRoll == 6){
-                System.out.println("End of game.");
+                System.out.println("\nEnd of game.");
                 break;
             } else if (diceRoll == 4){
                 System.out.println("\nZero points. Keep rolling.");
             } else {
                 score++;
-                System.out.println("One point. Keep rolling.");
+                System.out.println("\nOne point. Keep rolling.");
             }
         }
             
