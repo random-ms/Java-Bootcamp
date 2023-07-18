@@ -1,0 +1,22 @@
+    /** Task 1 – make a function that returns a random number between 1 and 13
+     * Function name – drawRandomCard
+     * @return (int)
+     *
+     * Inside the function:
+     *   1. Gets a random number between 1 and 13.
+     *   2. Returns a card.
+     */
+
+    //To check rc
+    for (int i = 1; i < 20; i++) {
+        System.out.println(drawRandomCard());  
+    }
+
+    /** Task 2 – make a function that returns a String drawing of the card.
+     * Function name – cardString
+     * @param cardNumber (int)
+     * @return (String)
+     *
+     * Inside the function:
+     *   1. Returns a String drawing of the card.
+     */
