@@ -98,7 +98,7 @@ public class PokeritoP {
                             "  |  o  |\n" +
                             "  | o o |\n" +
                             "  |____S|\n";
-                           
+                            
 
             
             case 6: return  "   _____ \n" +
@@ -108,7 +108,7 @@ public class PokeritoP {
                             "  | o o |\n" +
                             "  |____6|\n";
         
-                           
+                            
             case 7: return  "   _____ \n" +
                             "  |7    |\n" +
                             "  | o o |\n" +
@@ -116,7 +116,7 @@ public class PokeritoP {
                             "  | o o |\n" +
                             "  |____7|\n";
                             
-                  
+                    
             case 8: return  "   _____ \n" +
                             "  |8    |\n" +
                             "  |o o o|\n" +
@@ -124,7 +124,7 @@ public class PokeritoP {
                             "  |o o o|\n" +
                             "  |____8|\n";
                             
-                     
+                        
             case 9: return  "   _____ \n" +
                             "  |9    |\n" +
                             "  |o o o|\n" +
@@ -155,17 +155,17 @@ public class PokeritoP {
                             "  |o o%%|\n"+ 
                             "  | |%%%|\n"+ 
                             "  |_%%%O|\n";
-                       
-                      
+                        
+                        
             case 13: return "   _____\n" +
                             "  |K  WW|\n"+ 
                             "  | o {)|\n"+ 
                             "  |o o%%|\n"+ 
                             "  | |%%%|\n"+ 
                             "  |_%%%>|\n";
-                           
+                            
             default: return "This should never be called.";
         }
-     }
+    }
 
 }
