@@ -11,6 +11,9 @@
     for (int i = 1; i < 20; i++) {
         System.out.println(drawRandomCard());  
     }
+            for (int i = 1; i < 6; i++) {
+            System.out.println(cardString(drawRandomCard()));  
+        }
 
     /** Task 2 – make a function that returns a String drawing of the card.
      * Function name – cardString
@@ -20,3 +23,12 @@
      * Inside the function:
      *   1. Returns a String drawing of the card.
      */
+
+     //Task 3 – Wait for the user to press enter.
+
+             
+    //Task 4 – Get two random cards.
+    //       – Print them: \n You get a \n" + <randomCard> + "\n and a \n" + <randomCard>
+
+    //Task 5 – Print the sum of your hand value.
+    //       – print: your total is: <hand value>
