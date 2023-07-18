@@ -20,11 +20,12 @@ public class BlackjackC {
         int handValue = Math.min(card1, 10) + Math.min(card2, 10);
         System.out.println(handValue);
 
-        //Task 6 – Get two random cards for the dealer.
-        //       – Print: The dealer shows \n" + <first card> + "\nand has a card facing down \n" + <facedown card>
-        //       – Print: \nThe dealer's total is hidden
+        int firstCard = drawRandomCard();
+        String facedown = faceDown();
 
-       
+        System.out.println("The dealer shows \n" + firstCard + "\nand has a card facing down \n" + facedown);
+        System.out.println("\nThe dealer's total is hidden");
+
         //Task 8 – Keep asking the player to hit or stay (while loop).
         //       1. Every time the player hits
         //             – draw a new card.
