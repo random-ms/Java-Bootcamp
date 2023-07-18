@@ -45,8 +45,8 @@ public class PokeritoA {
         int yourMatches = 0;
         int computerMatches =0;
 
-        String yourCard = randomCard();
-        String computerCard = randomCard();
+        String yourreturn randomCard();
+        String computerreturn randomCard();
 
 
         System.out.println("Here is your card \n" + yourCard + "\n");
@@ -65,8 +65,8 @@ public class PokeritoA {
          *      <print card>
          *      ...
          */
-                yourCard = randomCard();
-                computerCard = randomCard();
+                yourreturn randomCard();
+                computerreturn randomCard();
                 String draw = randomCard();
          for (int i = 1; i < 6; i++){
             userReady = scan.nextLine();
@@ -108,131 +108,114 @@ public class PokeritoA {
      public static String randomCard(){
         double rc = Math.random() * 14;
         int roundedCardValue = (int)rc;
-        String card = "";
 
         switch(roundedCardValue){
-            case 1: card =              
-                            "   _____\n"+
+            case 1: return  "   _____\n"+
                             "  |A _  |\n"+ 
                             "  | ( ) |\n"+
                             "  |(_'_)|\n"+
                             "  |  |  |\n"+
                             "  |____V|\n";
-                            break;
-
-            case 2: card = 
-                            "   _____\n"+              
+            
+                            
+            case 2: return  "   _____\n"+              
                             "  |2    |\n"+ 
                             "  |  o  |\n"+
                             "  |     |\n"+
                             "  |  o  |\n"+
                             "  |____Z|\n";
-                            break;
+                            
 
-            case 3: card = 
-                            "   _____\n" +
+            case 3: return  "   _____\n" +
                             "  |3    |\n"+
                             "  | o o |\n"+
                             "  |     |\n"+
                             "  |  o  |\n"+
                             "  |____E|\n";
-                            break;
+                            
 
-             case 4: card =
-                            "   _____\n" +
+             case 4: return "   _____\n" +
                             "  |4    |\n"+
                             "  | o o |\n"+
                             "  |     |\n"+
                             "  | o o |\n"+
                             "  |____h|\n";
-                            break;
+                            
 
-            case 5: card =
-                            "   _____ \n" +
+            case 5: return  "   _____ \n" +
                             "  |5    |\n" +
                             "  | o o |\n" +
                             "  |  o  |\n" +
                             "  | o o |\n" +
                             "  |____S|\n";
-                            break;
+                           
 
             
-            case 6: card =
-                            "   _____ \n" +
+            case 6: return  "   _____ \n" +
                             "  |6    |\n" +
                             "  | o o |\n" +
                             "  | o o |\n" +
                             "  | o o |\n" +
                             "  |____6|\n";
-                            break;
         
-            case 7: card =
-                            "   _____ \n" +
+                           
+            case 7: return  "   _____ \n" +
                             "  |7    |\n" +
                             "  | o o |\n" +
                             "  |o o o|\n" +
                             "  | o o |\n" +
                             "  |____7|\n";
-                            break;
+                            
                   
-            case 8: card =
-                            "   _____ \n" +
+            case 8: return  "   _____ \n" +
                             "  |8    |\n" +
                             "  |o o o|\n" +
                             "  | o o |\n" +
                             "  |o o o|\n" +
                             "  |____8|\n";
-                            break;
+                            
                      
-            case 9: card =
-                            "   _____ \n" +
+            case 9: return  "   _____ \n" +
                             "  |9    |\n" +
                             "  |o o o|\n" +
                             "  |o o o|\n" +
                             "  |o o o|\n" +
                             "  |____9|\n";
-                            break;
+                            
         
-            case 10: card =
-                            "   _____ \n" +
+            case 10: return "   _____ \n" +
                             "  |10  o|\n" +
                             "  |o o o|\n" +
                             "  |o o o|\n" +
                             "  |o o o|\n" +
                             "  |___10|\n";
-                            break;
+                            
                     
-            case 11: card =
-                            "   _____\n" +
+            case 11: return "   _____\n" +
                             "  |J  ww|\n"+ 
                             "  | o {)|\n"+ 
                             "  |o o% |\n"+ 
                             "  | | % |\n"+ 
                             "  |__%%[|\n";
-                            break;
+                            
                     
-            case 12: card =
-                            "   _____\n" +
+            case 12: return "   _____\n" +
                             "  |Q  ww|\n"+ 
                             "  | o {(|\n"+ 
                             "  |o o%%|\n"+ 
                             "  | |%%%|\n"+ 
                             "  |_%%%O|\n";
-                            break;
+                       
                       
-            case 13: card = 
-                            "   _____\n" +
+            case 13: return "   _____\n" +
                             "  |K  WW|\n"+ 
                             "  | o {)|\n"+ 
                             "  |o o%%|\n"+ 
                             "  | |%%%|\n"+ 
                             "  |_%%%>|\n";
-                            break;
-            
-            default: System.exit(0); break;
+                           
+            default: return "This should never be called.";
         }
-
-        return card;
      }
 
 }
