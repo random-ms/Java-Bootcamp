@@ -1,4 +1,4 @@
-public class Main {
+public class MainP2S {
 
     static StoreP2S store = new StoreP2S();
 

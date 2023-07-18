@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class MainP3S {
 
     static StorePS3 store = new StorePS3();
 
