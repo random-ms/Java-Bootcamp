@@ -6,24 +6,20 @@ public class BlackjackC {
 
     public static void main(String[] args) {
 
-        for (int i = 1; i < 6; i++) {
-            System.out.println(cardString(drawRandomCard()));  
-        }
-
         System.out.println("\nWelcome to Java Casino!");
         System.out.println("Do you have a knack for Black Jack?");
         System.out.println("We shall see..");
         System.out.println("..Ready? Press anything to begin!");
 
-        
-        //Task 3 – Wait for the user to press enter.
-        //Task 4 – Get two random cards.
-        //       – Print them: \n You get a \n" + <randomCard> + "\n and a \n" + <randomCard>
+        scan.nextLine();
 
-        //Task 5 – Print the sum of your hand value.
-        //       – print: your total is: <hand value>
+        int card1 = drawRandomCard();
+        int card2 = drawRandomCard();
+        System.out.println("\n You get a \n" + cardString(card1) + "\n and a \n" + cardString(card2));
 
-        
+        int handValue = Math.min(card1, 10) + Math.min(card2, 10);
+        System.out.println(handValue);
+
         //Task 6 – Get two random cards for the dealer.
         //       – Print: The dealer shows \n" + <first card> + "\nand has a card facing down \n" + <facedown card>
         //       – Print: \nThe dealer's total is hidden
@@ -45,9 +41,8 @@ public class BlackjackC {
     }
 
      public static int drawRandomCard(){
-        Double rc = Math.random() * 14;
-        int rCard = rc.intValue();
-        return rCard;
+        double rc = Math.random() * 14;
+        return (int)rc;
      }
 
     public static String cardString(int cardNumber){
