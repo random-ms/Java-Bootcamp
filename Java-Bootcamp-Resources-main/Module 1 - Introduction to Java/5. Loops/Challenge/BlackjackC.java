@@ -18,12 +18,12 @@ public class BlackjackC {
         System.out.println("\n You get a \n" + cardString(card1) + "\n and a \n" + cardString(card2));
 
         int handValue = Math.min(card1, 10) + Math.min(card2, 10);
-        System.out.println(handValue);
+        System.out.println(handValue + "\n");
 
         int firstCard = drawRandomCard();
         int secondCard = drawRandomCard();
 
-        System.out.println("The dealer shows \n" + firstCard + "\nand has a card facing down \n" + faceDown());
+        System.out.println("The dealer shows \n" + cardString(firstCard) + "\nand has a card facing down \n" + faceDown());
         
         int dealersTotal = Math.min(firstCard, 10) + Math.min(secondCard, 10);
         System.out.println("\nThe dealer's total is hidden");
