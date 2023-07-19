@@ -36,3 +36,14 @@
     //Task 6 – Get two random cards for the dealer.
     //       – Print: The dealer shows \n" + <first card> + "\nand has a card facing down \n" + <facedown card>
     //       – Print: \nThe dealer's total is hidden
+
+    /** Task 7 – make a function that asks the user to hit or stay.
+     * Function name – hitOrStay
+     * @return (String)
+     *
+     * Inside the function:
+     *   1. Asks the user to hit or stay.
+     *   2. If the user doesn't enter "hit" or "stay", keep asking them to try again by printing:
+     *      Please write 'hit' or 'stay'
+     *   3. Returns the user's option 
+     */

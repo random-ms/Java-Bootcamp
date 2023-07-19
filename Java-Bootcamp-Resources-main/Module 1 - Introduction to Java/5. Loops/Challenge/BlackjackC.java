@@ -157,25 +157,19 @@ public class BlackjackC {
         "  |  J  |\n"+
         "  |_____|\n";
     }
-    
-    /** Task 7 – make a function that asks the user to hit or stay.
-     * Function name – hitOrStay
-     * @return (String)
-     *
-     * Inside the function:
-     *   1. Asks the user to hit or stay.
-     *   2. If the user doesn't enter "hit" or "stay", keep asking them to try again by printing:
-     *      Please write 'hit' or 'stay'
-     *   3. Returns the user's option 
-     */
 
     public static String hitOrStay(){
+        System.out.println("Would you like to hit or stay?");
+        String hos = scan.nextLine();
 
-        String hos;
         while(true){
-            System.out.println("\nHit or Stay?");
+            System.out.println("\nhit or stay?");
             hos = scan.nextLine();
-            if(hos.equals("Hit") || hos.equals("Stay")){
+            boolean invalidResponse = !(hos.equals("hit") || hos.equals("stay"));
+            int hit;
+            if(hos.equals("Hit")){
+                hit = drawRandomCard();
+            
                 return hos;
             }
         }
