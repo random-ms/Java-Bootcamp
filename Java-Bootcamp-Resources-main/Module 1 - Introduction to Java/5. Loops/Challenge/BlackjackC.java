@@ -21,10 +21,13 @@ public class BlackjackC {
         System.out.println(handValue);
 
         int firstCard = drawRandomCard();
-        String facedown = faceDown();
+        int secondCard = drawRandomCard();
 
-        System.out.println("The dealer shows \n" + firstCard + "\nand has a card facing down \n" + facedown);
+        System.out.println("The dealer shows \n" + firstCard + "\nand has a card facing down \n" + faceDown());
+        
+        int dealersTotal = Math.min(firstCard, 10) + Math.min(secondCard, 10);
         System.out.println("\nThe dealer's total is hidden");
+
 
         //Task 8 – Keep asking the player to hit or stay (while loop).
         //       1. Every time the player hits
@@ -165,5 +168,18 @@ public class BlackjackC {
      *      Please write 'hit' or 'stay'
      *   3. Returns the user's option 
      */
+
+    public static String hitOrStay(){
+
+        String hos;
+        while(true){
+            System.out.println("\nHit or Stay?");
+            hos = scan.nextLine();
+            if(hos.equals("Hit") || hos.equals("Stay")){
+                return hos;
+            }
+        }
+    
     }
+}
 
