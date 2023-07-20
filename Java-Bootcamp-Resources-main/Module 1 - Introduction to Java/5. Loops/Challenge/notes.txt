@@ -67,3 +67,6 @@
         //             - print: your new total is <total>
 
         //       2. Once the player stays, break the loop.
+
+
+    //For tasks 9 to 13, see the article: Blackjack Part II.

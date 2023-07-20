@@ -20,30 +20,56 @@ public class BlackjackC {
         int handValue = Math.min(card1, 10) + Math.min(card2, 10);
         System.out.println("Your total is " + handValue + ".\n");
 
-        int firstCard = drawRandomCard();
-        int secondCard = drawRandomCard();
+        int dealerCard1 = drawRandomCard();
+        int dealerCard2 = drawRandomCard();
 
-        System.out.println("The dealer shows \n" + cardString(firstCard) + "\nand has a card facing down \n" + faceDown());
+        System.out.println("The dealer shows \n" + cardString(dealerCard1) + "\nand has a card facing down \n" + faceDown());
         
-        int dealersTotal = Math.min(firstCard, 10) + Math.min(secondCard, 10);
+        int dealersTotal = Math.min(dealerCard1, 10) + Math.min(dealerCard2, 10);
         System.out.println("\nThe dealer's total is hidden.");
 
         while(true){
-        String option = hitOrStay();
+            String option = hitOrStay();
 
-        if (option.equalsIgnoreCase("Stay")){
-            break;
+            if (option.equalsIgnoreCase("Stay")){
+                break;
+            }
+
+            int newCard = drawRandomCard();
+            handValue += Math.min(newCard, 10);
+
+            System.out.println("\nYou get a \n" + cardString(newCard));
+            System.out.println("Your new total is " + handValue);
+
+            if(handValue > 21){
+                System.out.println("\nBust! Player loses");
+                System.exit(0);
+            }
         }
+            System.out.println("\nDealers turn");
+            System.out.println("The dealer's cards are \n" + cardString(dealerCard1) + "\n and a \n" + cardString(dealerCard2));
+            System.out.println("Dealer's total is " + dealersTotal);
+            
+            while(dealersTotal < 17){
 
-        int newCard = drawRandomCard();
-        handValue += Math.min(newCard, 10);
-        System.out.println("\nYou get a \n" + cardString(newCard));
-        System.out.println("Your new total is " + handValue);
+                int newCard = drawRandomCard();
+                dealersTotal += Math.min(newCard, 10);
 
-        }
+                System.out.println("\nDealer gets a \n" + cardString(newCard));
+                System.out.println("Dealer's total is " + dealersTotal);
+            }
 
-        
-        //For tasks 9 to 13, see the article: Blackjack Part II.
+            if (dealersTotal > 21){
+                System.out.println("\nBust! Dealer loses");
+                System.exit(0);
+            }
+
+            if (handValue > dealersTotal){
+                System.out.println("\nPlayer wins");
+            } else {
+                System.out.println("\nDealer wins");
+            }
+
         scan.close();
          
     }
