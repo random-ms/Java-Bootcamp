@@ -47,3 +47,23 @@
      *      Please write 'hit' or 'stay'
      *   3. Returns the user's option 
      */
+
+     Approach two:
+     String response = scan.nextLine();
+    
+     while(true){
+        if(response.equals("hit") || response.equals("stay")){
+            break;
+        }
+        return response;
+     }
+
+
+             //Task 8 – Keep asking the player to hit or stay (while loop).
+        //       1. Every time the player hits
+        //             – draw a new card.
+        //             – calculate their new total.
+        //             – print: (new line) You get a (new line) <show new card>.
+        //             - print: your new total is <total>
+
+        //       2. Once the player stays, break the loop.

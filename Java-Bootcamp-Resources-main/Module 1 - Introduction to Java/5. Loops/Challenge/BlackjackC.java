@@ -28,26 +28,31 @@ public class BlackjackC {
         int dealersTotal = Math.min(firstCard, 10) + Math.min(secondCard, 10);
         System.out.println("\nThe dealer's total is hidden.");
 
+        while(true){
+        String option = hitOrStay();
 
-        //Task 8 – Keep asking the player to hit or stay (while loop).
-        //       1. Every time the player hits
-        //             – draw a new card.
-        //             – calculate their new total.
-        //             – print: (new line) You get a (new line) <show new card>.
-        //             - print: your new total is <total>
+        if (option.equalsIgnoreCase("Stay")){
+            break;
+        }
 
-        //       2. Once the player stays, break the loop. 
+        int newCard = drawRandomCard();
+        handValue += Math.min(newCard, 10);
+        System.out.println("\nYou get a \n" + cardString(newCard));
+        System.out.println("Your new total is " + handValue);
+
+        }
 
         
-        //For tasks 9 to 13, see the article: Blackjack Part II. 
-         scan.close();
-
+        //For tasks 9 to 13, see the article: Blackjack Part II.
+        scan.close();
+         
     }
 
-     public static int drawRandomCard(){
+
+    public static int drawRandomCard(){
         double rc = Math.random() * 14;
         return (int)rc;
-     }
+    }
 
     public static String cardString(int cardNumber){
 
@@ -159,21 +164,14 @@ public class BlackjackC {
     }
 
     public static String hitOrStay(){
-        System.out.println("Would you like to hit or stay?");
-        String hos = scan.nextLine();
+        System.out.println("\nWould you like to hit or stay?");
+        String response = scan.nextLine();
 
-        while(true){
-            System.out.println("\nhit or stay?");
-            hos = scan.nextLine();
-            boolean invalidResponse = !(hos.equals("hit") || hos.equals("stay"));
-            int hit;
-            if(hos.equals("Hit")){
-                hit = drawRandomCard();
-            
-                return hos;
-            }
+        while(!(response.equalsIgnoreCase("hit") || response.equalsIgnoreCase("stay"))){
+            System.out.println("\nPlease enter hit or stay.");
+            response = scan.nextLine();
         }
-    
+        return response; 
     }
 }
 
