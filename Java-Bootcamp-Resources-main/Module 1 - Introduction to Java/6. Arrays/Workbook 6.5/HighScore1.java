@@ -5,9 +5,9 @@ public class HighScore1 {
                         randomNumber(), randomNumber(), randomNumber(), randomNumber(), randomNumber()};
 
         int highScore = 0;
+        System.out.print("Here are the scores: ");
         
         for (int i = 0; i < scores.length; i++){
-            System.out.println("Here are the scores: \n");
             System.out.print(scores[i] + " ");
             if (scores[i] > highScore) {
                 highScore = scores[i];
@@ -20,8 +20,7 @@ public class HighScore1 {
 
     public static int randomNumber(){
         double rn = Math.random() * 5000;
-        int rnumber = (int)rn;
-        return rnumber;
+        return (int)rn;
     }
 
 }
