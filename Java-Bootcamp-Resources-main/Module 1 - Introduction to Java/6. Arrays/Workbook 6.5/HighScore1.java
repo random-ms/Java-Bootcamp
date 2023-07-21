@@ -1,4 +1,4 @@
-public class HighScore {
+public class HighScore1 {
     public static void main(String[] args) {
         
         int[] scores = {randomNumber(), randomNumber(), randomNumber(), randomNumber(), randomNumber(),
