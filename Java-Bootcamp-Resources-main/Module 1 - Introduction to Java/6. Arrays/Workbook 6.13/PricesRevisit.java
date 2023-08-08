@@ -14,7 +14,7 @@ public class PricesRevisit {
                 case 2: System.out.print("Cereals: "); break;
             }
 
-            for (int j = 0; j < prices.length; j++) {
+            for (int j = 0; j < prices[i].length; j++) {
                 System.out.print(prices[i][j] + " ");
             }
 
