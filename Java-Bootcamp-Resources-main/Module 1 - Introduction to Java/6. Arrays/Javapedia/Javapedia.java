@@ -16,40 +16,36 @@ public class Javapedia {
             System.out.println("\n\tFigure " + (i+1)); 
 
             System.out.print("\t - Name: ");
-            String name = scan.nextLine();
+            database[i][0] = scan.nextLine();
 
             System.out.print("\t - Date of birth (dd/mm/yyyy): ");
-            String date = scan.nextLine();
+            database[i][1] = scan.nextLine();
 
             System.out.print("\t - Occupation: ");
-            String occupation = scan.nextLine();
-
-            database[i][0] = name;
-            database[i][1] = date; 
-            database[i][2] = occupation; 
+            database[i][2] = scan.nextLine();
 
             System.out.print("\n");
         }
         
         System.out.println("These are the values you stored:"); 
-            print2DArray(database);
+        print2DArray(database);
 
         System.out.print("\nWho do you want information on? ");
-        String info = scan.nextLine();
+        String name = scan.nextLine();
 
-        if(info.equalsIgnoreCase("Marco Polo")){
-            System.out.println("\tName: Marco Polo");
-            System.out.println("\tdate of birth: 08/01/1324");
-            System.out.println("\tOccupation: Merchant");
-        } 
-            else if(info.equalsIgnoreCase("Shakespeare")){
-            System.out.println("\tName: Shakespeare");
-            System.out.println("\tdate of birth: 26/03/1564");
-            System.out.println("\tOccupation: Playwright");
-            } else{
-                System.out.println("Data not avaliable!");
-            }
-
+        for (int i = 0; i < database.length; i++) {
+            if(database[i][0].equalsIgnoreCase(name)){
+                System.out.println("\tName: " + database[i][0]);
+                System.out.println("\tDate of birth: " + database[i][1]);
+                System.out.println("\tOccupation: " + database[i][2]);
+                break;
+            } 
+                /* System.out.println("Data not avaliable!");
+                  Interesting to see how I will modify this in the future becaus eit keeps printing the 
+                  above statement since running is fixed to the length.
+                */
+        }
+        
         scan.close();
     }
 
