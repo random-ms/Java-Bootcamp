@@ -13,7 +13,7 @@ public class TDarrays{
                 case 2: System.out.print("\tHermoine: "); break;
             }
 
-            for (int j = 0; j < grades.length; j++) {
+            for (int j = 0; j < grades[i].length; j++) {
                 System.out.print(grades[i][j] + " ");  
             }
             System.out.println("\n");
