@@ -1,0 +1,32 @@
+//Task 1 – Ask the user: how many historical figures will you register?
+//       – Store the value.
+
+//Task 2 – Create a 2D array with a variable number of rows, and 3 values per row.
+
+
+/**
+    * Function name: print2DArray
+    * @param array (String[][])
+    * 
+    * Inside the function
+    *  1. print the database
+    *     • a tab of space precedes each row.
+    *     • each value in database has one space from the other value. 
+    *     • print a new line.
+    */
+
+//Task 4: call print2DArray. 
+
+ String db = database[i][j];
+                switch (j) {
+                    case 0: name = db; break; 
+                    case 1: date = db; break;
+                    case 2: occupation = db; break;
+                }
+        /*Task 5: Let the user search the database by name. 
+            If there's a match:
+              print(    tab of space    Name: <name>)
+              print(    tab of space    Date of birth: <date of birth>)
+              print(    tab of space    Occupation: <occupation>)
+
+        */        
