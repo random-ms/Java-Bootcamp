@@ -12,38 +12,36 @@ public class ReturnValues3 {
 
         int choice = scan.nextInt();
 
-            for (int i = choice; i < 4; i++){
-                if (i == 1){
-                    System.out.println("\nArea equals length * width");
+        switch (choice) {
+            case 1: System.out.println("\nArea equals length * width");
                     System.out.println("\nPlease enter length: \t");
                     length = scan.nextDouble();
                     System.out.println("\nPlease enter width: \t");
                     width = scan.nextDouble();
                     break;
-                }
-    
-                if (i == 2) {
-                    System.out.println("\nLa surface est egale a la longueur * la largeur");
+            
+            case 2: System.out.println("\nLa surface est egale a la longueur * la largeur");
                     System.out.println("\nVeuillez entrer la longueur: \t");
                     length = scan.nextDouble();
                     System.out.println("\nVeuillez entrer la largeur: \t");
                     width = scan.nextDouble();
                     break;
-                } 
-    
-                if (i == 3){
-                    System.out.println("a\nrea es igual a largo * ancho");
+
+            case 3: System.out.println("a\nrea es igual a largo * ancho");
                     System.out.println("\nPor favor ingrese la longitud \t");
                     length = scan.nextDouble();
                     System.out.println("\nPor favor ingrese el ancho: \t");
                     width = scan.nextDouble();
-                    break;
-                }
-                scan.close();
-            }
+                    break; 
+                
+            default: System.exit(0);
+        }
+        
+        scan.close();
 
-            Double area = calculateArea(choice, length, width);
-            printArea(choice, length, width, area);
+        Double area = calculateArea(choice, length, width);
+        printArea(choice, length, width, area);
+
     }
     
         public static double calculateArea(int choice, double length, double width){
@@ -66,19 +64,23 @@ public class ReturnValues3 {
         }
         
         public static void printArea(int choice, double length, double width, double area){
-            for (int i = choice; i < 4; i++){
-                if (i == 1){
-                    System.out.println("\nA rectangle with a length of " + length + ", and a width of " + width + ", has an area of " + area);
+                switch (choice) {
+                    case 1: 
+                    System.out.println("\nA rectangle with a length of " + length + 
+                                        ", and a width of " + width + ", has an area of " + area);
                     break;
-                }
-                if (i == 2) {
-                    System.out.println("\nUn rectangle d'une longueur de " + length + ", et une largeur de " + width + ", a une superficie de " + area);
+                    
+                    case 2:
+                    System.out.println("\nUn rectangle d'une longueur de " + length + 
+                                        ", et une largeur de " + width + ", a une superficie de " + area);
                     break;
-                }
-                if (i == 3){
-                    System.out.println("\nUn rectángulo con una longitud de " + length + ", y un ancho de " + width + ", tiene un área de " + area);
+
+                    case 3: 
+                    System.out.println("\nUn rectángulo con una longitud de " + length + 
+                                        ", y un ancho de " + width + ", tiene un área de " + area);
                     break;
+
+                    default: System.exit(0);
                 }
-            }
         }
 }
