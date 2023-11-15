@@ -7,10 +7,15 @@ public class ReturnValues3 {
         double length = 0;
         double width = 0;
         
-        System.out.println("Hi, please enter prefered i output 1-3: \t" +
-        "\n1. English \n2. French \n3. Spanish \t");
+        System.out.println("\nHi, please enter prefered output 1-3: \n" +
+        "\n1. English \n2. French \n3. Spanish \n");
 
         int choice = scan.nextInt();
+
+        while(!(choice > 0) || !(choice < 4)){
+            System.out.println("\nOut of range, Please try again!\n");
+            choice = scan.nextInt();
+        }
 
         switch (choice) {
             case 1: System.out.println("\nArea equals length * width");
