@@ -13,7 +13,8 @@ public class ReturnValues3 {
         int choice = scan.nextInt();
 
         while(!(choice > 0) || !(choice < 4)){
-            System.out.println("\nOut of range, Please try again!\n");
+            System.out.println("\n" + choice + " is out of range, Please try again!\n"
+                                    + "\t1. English \t2. French \t3. Spanish \t");
             choice = scan.nextInt();
         }
 
