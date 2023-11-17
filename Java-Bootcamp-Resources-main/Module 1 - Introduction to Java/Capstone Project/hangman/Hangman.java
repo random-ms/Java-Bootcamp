@@ -66,13 +66,16 @@ public class Hangman {
     "     |\n" +
     " =========\n"};
 
-    public static void main(String[] args) {
 
+    public static String randomWord(){
+        int numWords = words.length;
+        double random = Math.random();
+        int randomIndex = (int)(numWords * random);
+        return words[randomIndex];
+    }
 
-
-
-
-
+    public static void main(String[] args) { 
+        System.out.println(randomWord());
     }
 
 }
