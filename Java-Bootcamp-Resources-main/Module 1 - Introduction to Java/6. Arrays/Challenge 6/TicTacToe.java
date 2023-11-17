@@ -30,7 +30,9 @@ public class TicTacToe {
         if(count == 3){
           System.out.println("X Wins!");
           break;
-        } else if(count == -3){
+        }
+        
+        if(count == -3){
           System.out.println("O Wins!");
           break;
         }
@@ -69,7 +71,7 @@ public class TicTacToe {
     
       // Math.abs returns the absolute value of a given number, removing any negative sign. 
       if (Math.abs(rows) == 3)
-      return rows; // If the block of code consists of only one line, you can omit the curly braces.
+      return rows;
       
       int columns = checkColumns(board);
       if (Math.abs(columns) == 3)
@@ -97,7 +99,7 @@ public class TicTacToe {
               }
             }
 
-          if(count == 3 || count == -3){
+          if(Math.abs(count) == 3){
             return count;
           } else {
             count = 0;
@@ -117,7 +119,7 @@ public class TicTacToe {
               }
             }
 
-          if(count == 3 || count == -3){
+          if(Math.abs(count) == 3){
             return count;
           } else {
             count = 0;
