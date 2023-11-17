@@ -28,15 +28,14 @@ public class TicTacToe {
 
         int count = checkWin(board);
         if(count == 3){
-          System.out.println("X Wins!");
-          break;
-        }
-        
-        if(count == -3){
-          System.out.println("O Wins!");
-          break;
-        }
-
+            System.out.println("X Wins!");
+            break;
+          } else if(count == -3){
+            System.out.println("O Wins!");
+            break;
+          } else {
+            System.out.println("IT'S A TIE!");
+          }
       }
 
       scan.close();
