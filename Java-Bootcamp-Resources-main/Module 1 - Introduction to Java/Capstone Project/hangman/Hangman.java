@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Hangman {
 
     public static String[] words = {"ant", "baboon", "badger", "bat", "bear", "beaver", "camel",
@@ -76,6 +78,7 @@ public class Hangman {
 
     public static void printPlaceHolders(String word){
         char[] placeHolder = word.toCharArray();
+        System.out.print("\nPlace Holder: ");
 
         for(char c : placeHolder){
             c = '_';
@@ -83,15 +86,51 @@ public class Hangman {
         }
     }
 
+    public static Boolean checkGuess(String word, char letter){
+        for (int i = 0; i < word.length(); i++) {
+            if (letter == word.charAt(i)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static char[] updatePlaceholders(String word, char letter, Boolean guess){
+        char[] placeHolder = word.toCharArray();
+
+        if (guess == true){
+            for (int i = 0; i < word.length(); i++) {
+                if(placeHolder[i] == letter){
+                    placeHolder[i] = letter;
+                    continue;
+                } 
+                return printPlaceHolders(word);
+            }
+        }        
+            return placeHolder;
+    } 
+
 
     public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
         String randomWord = randomWord();
-
-        System.out.println(randomWord);
-
-        System.out.print("Word: ");
-        printPlaceHolders(randomWord);
         
+        System.out.println("\nThe Word is:\t" + randomWord.toUpperCase());
+
+        printPlaceHolders(randomWord);
+
+
+        System.out.print("\nTry to guess.\t");
+        char inputGuess = scan.next().charAt(0);
+
+        boolean checkGuess = checkGuess(randomWord, inputGuess);
+        System.out.println("Correct guess?\t" + checkGuess);
+
+        System.out.println("Updated Shandis: " + updatePlaceholders(randomWord, inputGuess, checkGuess));
+
+        scan.close();
     }
 
 }
