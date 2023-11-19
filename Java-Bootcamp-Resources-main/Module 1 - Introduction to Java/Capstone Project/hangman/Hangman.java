@@ -74,8 +74,24 @@ public class Hangman {
         return words[randomIndex];
     }
 
-    public static void main(String[] args) { 
-        System.out.println(randomWord());
+    public static void printPlaceHolders(String word){
+        char[] placeHolder = word.toCharArray();
+
+        for(char c : placeHolder){
+            c = '_';
+            System.out.print(c + " ");
+        }
+    }
+
+
+    public static void main(String[] args) {
+        String randomWord = randomWord();
+
+        System.out.println(randomWord);
+
+        System.out.print("Word: ");
+        printPlaceHolders(randomWord);
+        
     }
 
 }
