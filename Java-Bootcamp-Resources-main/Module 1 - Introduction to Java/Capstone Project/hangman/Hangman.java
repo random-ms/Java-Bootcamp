@@ -68,7 +68,62 @@ public class Hangman {
     "     |\n" +
     " =========\n"};
 
+    public static void main(String[] args) {
 
+        Scanner scan = new Scanner(System.in);
+
+        String randomWord = randomWord();
+
+        char[] placeholders = new char[randomWord.length()];
+        for (int i = 0; i < placeholders.length; i++) {
+            placeholders[i] = '_';
+        }
+
+        int misses = 0;
+
+        char[] missedGuesses =  new char[6]; 
+
+        while (misses < 6) {
+
+            System.out.print(gallows[misses]);
+            
+            System.out.print("Word:   ");
+            printPlaceholders(placeholders);
+            System.out.print("\n");
+
+            System.out.print("Misses:   ");
+            printMissedGuesses(missedGuesses);
+            System.out.print("\n\n");
+
+            System.out.print("Guess:   ");
+            char guess = scan.nextLine().charAt(0);
+            System.out.print("\n");
+
+            if (checkGuess(word, guess)) {
+                updatePlaceholders(randomWord, placeholders, guess);
+            } else {
+                missedGuesses[misses] = guess;
+                misses++;
+            }
+            
+            if (Arrays.equals(placeholders, randomWord.toCharArray())) {
+                System.out.print(gallows[misses]);
+                System.out.print("\nWord:   ");
+                printPlaceholders(placeholders);
+                System.out.println("\nGOOD WORK!");                
+                break;
+            }
+        }
+
+        if (misses == 6) {
+            System.out.print(gallows[6]);
+            System.out.println("\nRIP!");
+            System.out.println("\nThe word was: '" + randomWord + "'");
+        }
+        scan.close();
+    }
+
+    
     public static String randomWord(){
         int numWords = words.length;
         double random = Math.random();
@@ -76,13 +131,16 @@ public class Hangman {
         return words[randomIndex];
     }
 
-    public static void printPlaceHolders(String word){
-        char[] placeHolder = word.toCharArray();
-        System.out.print("\nPlace Holder: ");
+    public static void printPlaceholders(char[] placeholders) {
+        for (int i = 0; i < placeholders.length; i++) {
+                System.out.print(" " + placeholders[i]);
+            }
+        System.out.print("\n");
+    }
 
-        for(char c : placeHolder){
-            c = '_';
-            System.out.print(c + " ");
+    public static void printMissedGuesses(char[] misses) {
+        for (int i = 0; i < misses.length; i++) {
+            System.out.print(misses[i]);
         }
     }
 
@@ -95,42 +153,13 @@ public class Hangman {
         return false;
     }
 
-    public static char[] updatePlaceholders(String word, char letter, Boolean guess){
-        char[] placeHolder = word.toCharArray();
+    public static void updatePlaceholders(String word, char[] placeholders, char guess) {
 
-        if (guess == true){
-            for (int i = 0; i < word.length(); i++) {
-                if(placeHolder[i] == letter){
-                    placeHolder[i] = letter;
-                    continue;
-                } 
-                return printPlaceHolders(word);
+        for (int j = 0; j < word.length(); j++) {
+            if (word.charAt(j) == guess) {
+                placeholders[j] = guess;
             }
-        }        
-            return placeHolder;
-    } 
-
-
-    public static void main(String[] args) {
-
-        Scanner scan = new Scanner(System.in);
-
-        String randomWord = randomWord();
-        
-        System.out.println("\nThe Word is:\t" + randomWord.toUpperCase());
-
-        printPlaceHolders(randomWord);
-
-
-        System.out.print("\nTry to guess.\t");
-        char inputGuess = scan.next().charAt(0);
-
-        boolean checkGuess = checkGuess(randomWord, inputGuess);
-        System.out.println("Correct guess?\t" + checkGuess);
-
-        System.out.println("Updated Shandis: " + updatePlaceholders(randomWord, inputGuess, checkGuess));
-
-        scan.close();
+        }
     }
 
 }
