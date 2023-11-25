@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Hangman {
 
@@ -99,7 +100,7 @@ public class Hangman {
             char guess = scan.nextLine().charAt(0);
             System.out.print("\n");
 
-            if (checkGuess(word, guess)) {
+            if (checkGuess(randomWord, guess)) {
                 updatePlaceholders(randomWord, placeholders, guess);
             } else {
                 missedGuesses[misses] = guess;
@@ -146,7 +147,7 @@ public class Hangman {
 
     public static Boolean checkGuess(String word, char letter){
         for (int i = 0; i < word.length(); i++) {
-            if (letter == word.charAt(i)){
+            if (word.charAt(i) == letter){
                 return true;
             }
         }
@@ -155,9 +156,9 @@ public class Hangman {
 
     public static void updatePlaceholders(String word, char[] placeholders, char guess) {
 
-        for (int j = 0; j < word.length(); j++) {
-            if (word.charAt(j) == guess) {
-                placeholders[j] = guess;
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) == guess) {
+                placeholders[i] = guess;
             }
         }
     }
