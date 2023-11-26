@@ -4,9 +4,9 @@ public class Main {
 
         Person person = new Person();
 
-        person.name = "Mr Simamane";
+        person.name = "Mpilo";
         person.nationality = "South African";
-        person.dateOfBirth = "19 July 0000";
+        person.dateOfBirth = "19 July";
         person.passport = new String[]{person.name, person.nationality, person.dateOfBirth};
         person.seatNumber = 5;
 
