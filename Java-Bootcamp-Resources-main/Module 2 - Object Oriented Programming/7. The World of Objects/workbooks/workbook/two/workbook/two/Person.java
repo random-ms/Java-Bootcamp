@@ -19,14 +19,33 @@ public class Person {
         return name;
     }
 
+    public void setName(String name){
+        this.name = name;
+    } 
+
     public String getNationality(){
         return nationality;
     }
+
+    public void setNationality(String nationality){
+        this.nationality = nationality;
+    }
+
     public String getDateOfBirth(){
         return dateOfBirth;
     }
+
+    public void setDateOfBirth(String date){
+        this.dateOfBirth = date;
+    }
+
     public int getSeatNumber(){
         return seatNumber;
     }
+
+    public void setSeatNumber(int seatNumber){
+        this.seatNumber = seatNumber;
+    }
+
  
 }
