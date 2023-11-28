@@ -5,9 +5,9 @@ public class Main {
     public static void main(String[] args) {
         Person person = new Person("Mpilo", "African", "July 19th", 7);
         
-        System.out.println("Name: " + person.name + "\n" + "Nationality: " + person.nationality
-                            + "\n" + "Date of Birth: " + person.dateOfBirth + "\n" + "Seat Number: " 
-                            + person.seatNumber + "\n");
+        System.out.println("Name: " + person.getName() + "\n" + "Nationality: " + person.getNationality()
+                            + "\n" + "Date of Birth: " + person.getDateOfBirth() + "\n" + "Seat Number: " 
+                            + person.getSeatNumber() + "\n");
 
     }
   
