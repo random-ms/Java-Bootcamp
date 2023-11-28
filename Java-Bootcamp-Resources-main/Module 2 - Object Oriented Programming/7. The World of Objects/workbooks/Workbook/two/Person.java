@@ -1,3 +1,4 @@
+package workbook.two;
 public class Person {
     
     String name;

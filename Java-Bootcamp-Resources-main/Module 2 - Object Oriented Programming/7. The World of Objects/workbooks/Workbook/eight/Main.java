@@ -1,3 +1,5 @@
+package workbook.eight;
+
 public class Main {
   
     public static void main(String[] args) {

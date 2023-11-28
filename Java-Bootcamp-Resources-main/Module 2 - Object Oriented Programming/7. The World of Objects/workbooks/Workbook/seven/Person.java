@@ -1,3 +1,4 @@
+package workbook.seven;
 import java.util.Arrays;
  
 public class Person {

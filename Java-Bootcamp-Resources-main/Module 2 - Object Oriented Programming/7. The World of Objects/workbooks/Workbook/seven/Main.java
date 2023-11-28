@@ -1,4 +1,6 @@
- public class Main {
+package workbook.seven;
+
+public class Main {
   
     public static void main(String[] args) {
  
