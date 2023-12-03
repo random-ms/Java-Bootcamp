@@ -11,6 +11,13 @@ public class Car2 {
         this.year = year;
         this.color = color;
     }
+
+    public Car2(Car2 source){
+        this.make = source.make;
+        this.price = source.price;
+        this.year = source.year;
+        this.color = source.color;
+    }
     
     public String getMake(){
         return this.make;
