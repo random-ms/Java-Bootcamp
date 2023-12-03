@@ -14,8 +14,5 @@ public class Main {
         } else {
             System.out.println("We are sorry " + person.getName() + ". We cannot process your application.");
         }
-
-        
-
     }
 }
