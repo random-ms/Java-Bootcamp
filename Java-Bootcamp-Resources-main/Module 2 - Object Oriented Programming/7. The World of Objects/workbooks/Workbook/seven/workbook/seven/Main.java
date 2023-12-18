@@ -11,6 +11,8 @@ public class Main {
             person.setPassport();
         }
 
+        System.out.println(person);
+
         
     }
   
