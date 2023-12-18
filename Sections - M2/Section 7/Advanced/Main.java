@@ -1,14 +1,14 @@
-public class Main2 {
+public class Main {
 
     public static void main(String[] args) {
         
-    Car2 nissan = new Car2("Nissan", 10000, 2020, "Green", new String[]{"Tires", "Keys"});
+    Car nissan = new Car("Nissan", 10000, 2020, "Green", new String[]{"Tires", "Keys"});
 
-    Car2 dodge = new Car2("Dodge", 11000, 2019, "Blue", new String[]{"Tires", "Keys"});
+    Car dodge = new Car("Dodge", 11000, 2019, "Blue", new String[]{"Tires", "Keys"});
 
-    Car2 nissan2 = new Car2(nissan);
+    Car nissan2 = new Car(nissan);
 
-    nissan2.setColor("Orange");
+    nissan.setColor("Orange");
 
     nissan.setPrice(nissan.getPrice() * 0.8); // 20% discount
     dodge.setPrice(dodge.getPrice() * 0.7); // 30% discount
