@@ -19,7 +19,7 @@ public class Main {
         System.out.println("\n ****** JAVA DEALERSHIP! ****** \n");        
         System.out.println("Feel free to browse through our collection of cars.\n");
         System.out.println(dealership);
-        System.out.println("Which car are you interested in? (0 – 4).\t");
+        System.out.print("Which car are you interested in? (0 – 4).\t");
         int index = scan.nextInt();
 
         dealership.sell(index);
