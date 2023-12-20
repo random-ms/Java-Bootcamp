@@ -64,6 +64,12 @@ public class Car {
         this.parts = Arrays.copyOf(parts, parts.length);
     }
 
+    public void drive(){ 
+        System.out.println("/n You bought a beautiful " + this.year + " " + this.color + 
+                            " " + this.make + " for " + this.price + ".");
+        System.out.println("Please drive your car to the nearest exit.\n");
+    }
+
     public String toString(){
         return "Make: " + this.make + ".\n" 
         +  "Price: " + this.price + ".\n"
