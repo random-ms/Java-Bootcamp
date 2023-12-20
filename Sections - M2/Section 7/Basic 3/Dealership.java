@@ -8,6 +8,10 @@ public class Dealership {
         }
     }
 
+    public void sell(int index){
+        this.cars[index].drive();
+    }
+
     public String toString() {
         String temp = "";
         for (int i = 0; i < this.cars.length; i++) {
