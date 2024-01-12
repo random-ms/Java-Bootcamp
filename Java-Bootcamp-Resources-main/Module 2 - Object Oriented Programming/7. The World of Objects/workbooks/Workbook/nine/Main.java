@@ -1,4 +1,4 @@
-package workbook.nine;
+import java.util.Arrays;
 
 public class Main {
   
@@ -22,11 +22,14 @@ public class Main {
 
         for (int i = 0; i < people.length; i++) {
             boolean passportApproved = people[i].applyPassport();
-             // TODO: passport logic here
 
-            airline.createReservation(people[i]);
+             if(passportApproved){
+                airline.createReservation(people[i]);
+             } else {
+                System.out.println("Sorry " + people[i].getName() + ". Your passport: " + Arrays.toString(people[i].getPassport()) + " is not valid.\n");
+             }
         }
 
      }
   
-}
+} 
