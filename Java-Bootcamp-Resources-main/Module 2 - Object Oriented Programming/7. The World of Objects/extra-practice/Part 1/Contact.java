@@ -18,5 +18,36 @@ public class Contact {
         this.birthDate = source.birthDate;
         this.age = source.age;
     }
-    
+
+    public String getName(){
+        return this.name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getPhoneNumber(){
+        return this.phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber){
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getBirthDate(){
+        return this.birthDate;
+    }
+
+    public void setBirthDate(String birthDate){
+        this.birthDate = birthDate;
+    }
+
+    public int getAge(){
+        return this.age;
+    }
+
+    public void setAge(int age){
+        this.age = age;
+    }
 }
