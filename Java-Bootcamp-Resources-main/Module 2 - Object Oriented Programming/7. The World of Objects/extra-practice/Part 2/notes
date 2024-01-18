@@ -1,0 +1,28 @@
+// this was my first attempt - not bad
+
+/*class HelloWorld {
+    public static void main(String[] args) {
+        String birthDate = "1990-01-01";
+        
+        char[] bd = birthDate.toCharArray();
+        
+        for (int i = 0; i < 4; i++) {
+            System.out.print(bd[i]);   prints 1990
+        }
+    }
+}
+
+
+public static LocalDate parse(CharSequence text, DateTimeFormatter formatter)
+Obtains an instance of LocalDate from a text string using a specific formatter.
+
+public int toAge(String birthDate){ 
+        "1998-07-07" string is parsed to parsedBirthDate variable. Format has to be the same.
+
+        LocalDate parsedBirthDate = LocalDate.parse(birthDate, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        LocalDate currentDate = LocalDate.now(); //gets current date and stores it in currentDate
+        Period period = Period.between(parsedBirthDate, currentDate);
+        return new period.getYears();
+    }
+
+*/
