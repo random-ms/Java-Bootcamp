@@ -61,4 +61,10 @@ public class Contact {
         return period.getYears();
     }
 
+    public String toString() {
+        return "Name: " + this.name + "\n" +
+            "Phone number: " + this.phoneNumber + "\n" +
+            "Birth Date: " + this.birthDate + "\n" +
+            "Age: " + this.age + " year old\n";
+    }
 }
