@@ -7,11 +7,11 @@ public class Store {
     }
 
     public Movie getMovie(int index) {
-        return new Movie(this.movies[index]);
+        return new Movie(this.movies[index]); /*New reference to prevent internal state from being external modification. */
     }
 
     public void setMovie(int index, Movie movie) {
-        this.movies[index] = new Movie(movie);
+        this.movies[index] = new Movie(movie); /*New reference to prevent internal state from being external modification. */
     }
 
     public String toString() {
