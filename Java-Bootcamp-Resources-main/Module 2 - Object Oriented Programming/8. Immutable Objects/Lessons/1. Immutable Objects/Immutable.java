@@ -1,8 +1,14 @@
 public class Immutable {
-    public static void main(String[] args) {        
+    public static void main(String[] args) {
+        
+        /* Immmutable objects are technically classes with references as well
+           Creating an object instead of a single value is the difference between memory size
+
+            Variables == primitive : stores single value
+            Immutable (class type variables) store a reference to an object */
 
         int apples = 5;
-        Integer applesWrapper = 5;
+        Integer applesWrapper = 5; // technically Integer applesWrapper = new Integer(5);
 
         System.out.println(apples);
         System.out.println(applesWrapper);
