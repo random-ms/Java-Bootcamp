@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         try {
-            loadMovies("movies.txt");
+            loadMovies("movies.txt"); 
             printStore();
             userInput();
         } catch (FileNotFoundException e) {
@@ -73,7 +73,8 @@ public class Main {
     }
 
     public static void loadMovies(String fileName) throws FileNotFoundException {
-        FileInputStream fis = new FileInputStream(fileName);
+        FileInputStream fis = new FileInputStream("Java-Bootcamp-Resources-main\\Module 2 - Object Oriented Programming\\10. " + 
+                                                    "Exception Handling\\Challenge\\Part 1\\" + fileName);
         Scanner scanFile = new Scanner(fis);
 
         while (scanFile.hasNextLine()) {
