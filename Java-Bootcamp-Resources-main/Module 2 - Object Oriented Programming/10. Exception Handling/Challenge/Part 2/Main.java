@@ -40,17 +40,19 @@ public class Main {
             System.out.print("\nPlease choose an integer between 0 - 9: ");
 
             // 1. Anticipate the user not entering an integer.
+            if(!scanner.hasNextInt()){
+                scanner.next();
+                continue;
+            }
 
             int choice = scanner.nextInt();
-
-            // 2. Anticipate the choice being incorrect.
+            if (incorrectChoice(choice)) continue; // 2. Anticipate the choice being incorrect.
             return choice;
         }
     }
 
     public static boolean incorrectChoice(int choice) {
-        // TODO
-        return false;
+        return choice < 0 || choice > 9;
     }
 
     public static double promptForRating(Scanner scanner, String name) {
@@ -58,22 +60,24 @@ public class Main {
             System.out.print("\nSet a new rating for " + name + ": ");
             
             // 1. Anticipate the user not entering a double.
+            if(!scanner.hasNextDouble()){
+                scanner.next();
+                continue;
+            }
 
             double rating = scanner.nextDouble();
-            
-            // 2. Anticipate the rating being incorrect.
-
+            if (incorrectRating(rating)) continue;  // 2. Anticipate the rating being incorrect.
             return rating;
          }
     }
 
     public static boolean incorrectRating(double rating) {
-        // TODO
-        return false;
+        return rating < 0 || rating > 10;
     }
 
     public static void loadMovies(String fileName) throws FileNotFoundException {
-        FileInputStream fis = new FileInputStream(fileName);
+        FileInputStream fis = new FileInputStream("Java-Bootcamp-Resources-main\\Module 2 - Object Oriented Programming\\10. " + 
+                                                    "Exception Handling\\Challenge\\Part 2\\" + fileName);
         Scanner scanFile = new Scanner(fis);
 
         while (scanFile.hasNextLine()) {
