@@ -2,8 +2,8 @@ package TTT;
 import java.util.Scanner;
 
 public class Logic {
+  
     static Scanner scan = new Scanner(System.in);
-
 
     public static void printBoard(char[][] board){
       System.out.println("\n"); 
