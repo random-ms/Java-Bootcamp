@@ -9,14 +9,19 @@ public class City {
         setPopulation(population);
     }
 
+    public City(City source) {
+        setName(source.name);
+        setCountry(source.country);
+        setPopulation(source.population);
+    }
+
     public String getName() {
         return this.name;
     }
 
     public void setName(String name) {
-        if (name == null || name.isBlank()) {
-            throw new IllegalArgumentException("Name cannot be null or blank.");
-        }
+        if (name == null || name.isBlank()) throw new IllegalArgumentException("Name cannot be null or blank.");
+        
         this.name = name;
     }
 
@@ -25,9 +30,8 @@ public class City {
     }
 
     public void setCountry(String country) {
-        if (country == null || country.isBlank()) {
-            throw new IllegalArgumentException("Country cannot be null or blank.");
-        }
+        if (country == null || country.isBlank()) throw new IllegalArgumentException("Country cannot be null or blank.");
+        
         this.country = country;
     }
 
@@ -36,9 +40,7 @@ public class City {
     }
 
     public void setPopulation(long population) {
-        if (population < 0) {
-            throw new IllegalArgumentException("Population must be greater than or equal to 0.");
-        }
+        if (population < 0) throw new IllegalArgumentException("Population must be greater than or equal to 0.");
         this.population = population;
     }
 }
