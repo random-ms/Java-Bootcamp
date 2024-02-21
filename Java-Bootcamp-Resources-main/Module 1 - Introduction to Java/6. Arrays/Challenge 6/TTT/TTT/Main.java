@@ -33,6 +33,7 @@ public class Main extends Logic {
             if (count == 3) { System.out.println("X Wins!"); break; }
             else if (count == -3) { System.out.println("O Wins!"); break; }
         }  { System.out.println("IT'S A TIE!"); }
+        
         scan.close();
     }
     
