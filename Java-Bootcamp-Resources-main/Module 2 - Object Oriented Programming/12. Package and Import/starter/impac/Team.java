@@ -1,5 +1,7 @@
+package starter.impac;
 import java.util.HashMap;
 import java.util.Map;
+
 
 public class Team {
 
