@@ -10,13 +10,15 @@ public class Main {
         Shirt shirt = new Shirt(20, "PURPLE", "Adidas", Size.SMALL);
         shirt.fold();
         storeHub(shirt);
+        shirt.wear();
 
-        Pants pants = new Pants(30.00,"GOLD", "Nike", 21, 21);
+        Pants pants = new Pants(30.00, "GOLD", "Nike", 21, 21);
         pants.fold();
         storeHub(pants);
+        pants.wear();
     }
 
     public static void storeHub(Product product){
-        System.out.println("Thank you for buying " + product.getBrand());
+        System.out.println("Thank you for buying " + product.getBrand() + " " + product.getClass().getSimpleName() +".\n");
     }
 }
