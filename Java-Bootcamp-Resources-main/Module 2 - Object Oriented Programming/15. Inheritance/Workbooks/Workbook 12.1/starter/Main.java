@@ -14,10 +14,6 @@ public class Main {
 
         System.out.println("Sphere - radius: " + sphere.getRadius());
         System.out.println("Cylinder - radius: " + cylinder.getRadius() + " height " + cylinder.getHeight());
-
     }
-
-  
-
 }
   
