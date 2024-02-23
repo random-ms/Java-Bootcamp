@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.text.Position;
+import constants.Position;
 
 public class Team {
 
