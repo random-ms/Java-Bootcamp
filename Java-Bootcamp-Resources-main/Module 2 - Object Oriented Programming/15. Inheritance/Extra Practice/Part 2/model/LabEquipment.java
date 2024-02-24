@@ -13,14 +13,19 @@ public abstract class LabEquipment {
         setYear(year);
     }
 
+    public LabEquipment(LabEquipment source) {
+        setManufacturer(source.manufacturer);
+        setModel(source.model);
+        setYear(source.year);
+    }
+
     public String getManufacturer() {
         return manufacturer;
     }
 
     public void setManufacturer(String manufacturer) {
-        if (manufacturer == null || manufacturer.isBlank()) {
+        if (manufacturer == null || manufacturer.isBlank())
             throw new IllegalArgumentException("Manufacturer cannot be null or blank.");
-        }
         this.manufacturer = manufacturer;
     }
 
@@ -29,9 +34,7 @@ public abstract class LabEquipment {
     }
 
     public void setModel(String model) {
-        if (model == null || model.isBlank()) {
-            throw new IllegalArgumentException("Model cannot be null or blank.");
-        }
+        if (model == null || model.isBlank()) throw new IllegalArgumentException("Model cannot be null or blank.");
         this.model = model;
     }
 
@@ -40,11 +43,11 @@ public abstract class LabEquipment {
     }
 
     public void setYear(int year) {
-        if (year < MIN_YEAR) {
-            throw new IllegalArgumentException("Year must be greater than or equal to the minimum year.");
-        }
+        if (year < MIN_YEAR) throw new IllegalArgumentException("Year must be greater than or equal to the minimum year.");
         this.year = year;
     }
 
     public abstract String performMaintenance();
+
+    public abstract LabEquipment clone();
 }
