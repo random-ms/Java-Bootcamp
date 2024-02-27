@@ -6,11 +6,11 @@ public class Main {
 
         List<Integer> integers = Arrays.asList(25, 19, 23, 45, 38, 23, 59, 12);
 
-
+        integers.sort((right, left) -> right.compareTo(left)); //Ascending order
+        // integers.sort((right, left) -> left.compareTo(right)); Descending order
+        integers.forEach(i -> System.out.print(i + " "));
     }
-
 }
-
 
 /**************IMPERATIVE APPROACH**************
  * 
