@@ -13,7 +13,8 @@ public class Main {
         map.put("THNG-007", new Item("Super Thingamajig", 15));
         map.put("DOFO-008", new Item("Super Doo-dad", 10));
 
-        System.out.println("\nSKU \t\tPrice\tItem");
+        System.out.println("SKU \t\tPrice\tItem");
 
+        map.forEach((sku, item) -> System.out.println(sku + "\t" + item.getPrice() + "\t" + item.getName()));
     }
 }
