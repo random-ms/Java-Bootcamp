@@ -6,7 +6,7 @@ public class CashAccount extends TradeAccount{
 
     private BigDecimal cashBalance;
 
-    public CashAccount(String id,BigDecimal cashBalance) {
+    public CashAccount(String id, BigDecimal cashBalance) {
         super(id);
         this.cashBalance = cashBalance;
     }
