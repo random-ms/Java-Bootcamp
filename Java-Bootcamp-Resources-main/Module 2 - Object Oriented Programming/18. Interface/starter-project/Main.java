@@ -5,10 +5,17 @@ import java.util.List;
 import pojo.Account;
 import pojo.Checking;
 import pojo.Credit;
+import repository.AccountRepository;
+import service.CheckingService;
+import service.CreditService;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        AccountRepository repository = new AccountRepository();
+        CheckingService checkingService = new CheckingService(repository);
+        CreditService creditService = new CreditService(repository); 
         
         // Assume these were obtained from user input.
         List<Account> accounts = Arrays.asList(
@@ -19,8 +26,14 @@ public class Main {
             new Credit("G4567H", new BigDecimal("200.00"))
         );
 
+        accounts.forEach(account -> {
+            if(account instanceof Checking) checkingService.createAccount((Checking)account); //Primitive are automatically typecasted | Objects always needs to be defined
+            else creditService.createAccount((Credit)account);
+        });
 
+        Checking checking = (Checking)repository.retrieveAccount("A1234B");
+        checking.setBalance(checking.getBalance().add(new BigDecimal("100")));
+        repository.updateAccount(checking);
+        repository.deleteAccount("G4567H");
     }
-
-
 }

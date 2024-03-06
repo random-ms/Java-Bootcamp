@@ -11,6 +11,11 @@ public class Credit extends Account {
         this.credit = credit;
     }
 
+    @Override
+    public Account clone() {
+        return new Credit(super.getId(), this.credit);
+    }
+
     public BigDecimal getCredit() {
         return this.credit;
     }
@@ -18,6 +23,4 @@ public class Credit extends Account {
     public void setCredit(BigDecimal credit) {
         this.credit = credit;
     }
-
-
 }
