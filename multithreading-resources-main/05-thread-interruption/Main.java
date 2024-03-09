@@ -13,8 +13,14 @@ public class Main {
         Thread.sleep(2000);
 
         // TODO: Task One - Interrupt all players after the time limit
+        for (PlayerThread playerThread : threads) {
+            playerThread.interrupt();
+        }
 
         // TODO: Task Two - Wait for all player threads to finish
+        for (PlayerThread playerThread : threads) {
+            playerThread.join();
+        }
 
         // Determine the player with the highest score
         int winningScore = 0;
