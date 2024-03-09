@@ -1,6 +1,6 @@
 public class ThreadSleepEffect {
     public static void main(String[] args) {
-        Thread highPriorityThread = new Thread(() -> countWithSleep(0), "High-Priority-Thread");
+        Thread highPriorityThread = new Thread(() -> countWithSleep(10), "High-Priority-Thread");
         Thread lowPriorityThread = new Thread(() -> countWithSleep(0), "Low-Priority-Thread");
         
         highPriorityThread.setPriority(Thread.MAX_PRIORITY);
@@ -16,7 +16,11 @@ public class ThreadSleepEffect {
         
         for (int i = 0; i < 20; i++) {
             System.out.println(threadName + " count: " + i);
-            // sleep logic here...
+            try {
+                Thread.sleep(sleepTime);
+            } catch (InterruptedException e) {
+                System.out.println(e.getMessage());
+            }
         }        
     }
 }
