@@ -10,6 +10,9 @@ public class Main {
         }
 
         // TODO: Task One - Wait for all player threads to finish
+        for (PlayerThread playerThread : threads) {
+            playerThread.join();
+        }
 
         // Determine the player with the highest score
         int winningScore = 0;

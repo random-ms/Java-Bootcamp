@@ -7,7 +7,7 @@ public class PlayerThread extends Thread {
 
     public PlayerThread(int playerNumber) {
         this.score = 0;
-        this.setName(Integer.toString(playerNumber));
+        super.setName(Integer.toString(playerNumber));
     }
 
     public int getScore() {
