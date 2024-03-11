@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "multithreading-resources-main/08-increasing-throughput",
         "Java-Bootcamp-Resources-main/Module 2 - Object Oriented Programming/19. Capstone/starter-project",
-        "multithreading-resources-main/07-reducing-latency"
+        "multithreading-resources-main/08-client-tester"
     ]
 }
