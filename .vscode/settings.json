@@ -1,6 +1,6 @@
 {
     "java.project.sourcePaths": [
         "Java-Bootcamp-Resources-main/Module 2 - Object Oriented Programming/19. Capstone/starter-project",
-        "multithreading-resources-main/09-data-race"
+        "multithreading-resources-main/10-race-condition"
     ]
 }
