@@ -2,17 +2,22 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.awt.Color;
 
 public class ImageToGrayscale {
 
     public static void main(String[] args) throws Exception {
-        File inputFile = new File("beach.png"); // Input file
-        File outputFile = new File("beach_grayscale.png"); // Output file
+        String path = "multithreading-resources-main\\07-reducing-latency\\";
+        File inputFile = new File(path + "beach.png"); // Input file
+        File outputFile = new File(path + "beach_grayscale.png"); // Output file
 
         try {
             BufferedImage image = ImageIO.read(inputFile);
-            convertToGrayscale(image);
+            long startTime = System.currentTimeMillis();
+            convertToGrayscaleConcurrently(image, 4);
+            long endTime = System.currentTimeMillis();
+
+            long timeTaken = endTime - startTime;
+            System.out.println("Time taken: " + timeTaken + " Milliseconds.");
 
             ImageIO.write(image, "png", outputFile);
         } catch (IOException e) {
@@ -20,31 +25,21 @@ public class ImageToGrayscale {
         }
     }
 
+                                                        // 5000 pixels
+    private static void convertToGrayscaleConcurrently(BufferedImage image, int numberOfThreads) throws InterruptedException {   
+        int heightPerThread = image.getHeight() / numberOfThreads; // each thread will process 2500 pixels
+        GreyScaleConverterThread[] threads = new GreyScaleConverterThread[numberOfThreads];
+        for (int i = 0; i < threads.length; i++) {
+            int startY = i * heightPerThread; 
+            int endY = startY + heightPerThread;
+            threads[i] = new GreyScaleConverterThread(image, startY, endY);
+            threads[i].start();
 
-    // private static void convertToGrayscaleConcurrently(BufferedImage image, int numberOfThreads) throws InterruptedException {
-
-
-        
-    // }
-
-
-    private static void convertToGrayscale(BufferedImage image) {
-        for (int y = 0; y < image.getHeight(); y++) {
-            for (int x = 0; x < image.getWidth(); x++) {
-                int rgb = image.getRGB(x, y);
-                Color color = new Color(rgb, true);
-    
-                int red = color.getRed();
-                int green = color.getGreen();
-                int blue = color.getBlue();
-                
-                // Compute the average of red, green, and blue (simple grayscale)
-                int gray = (red + green + blue) / 3;
-                
-                // Create new grayscale color
-                Color grayColor = new Color(gray, gray, gray, color.getAlpha());
-                image.setRGB(x, y, grayColor.getRGB());
-            }
+            //Thread 0 -> Starts at 0 * 2500 == 0 -- Ends 0 + 2500
+            //Thread 1 -> Starts at 1 * 2500 == 2500 -- Ends 2500 + 2500 (5000 pixels)
+        }
+        for (GreyScaleConverterThread greyScaleConverterThread : threads) {
+            greyScaleConverterThread.join();
         }
     }
 }

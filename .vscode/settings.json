@@ -1,6 +1,6 @@
 {
     "java.project.sourcePaths": [
         "Java-Bootcamp-Resources-main/Module 2 - Object Oriented Programming/19. Capstone/starter-project",
-        "multithreading-resources-main/06-daemon-threads"
+        "multithreading-resources-main/07-reducing-latency"
     ]
 }
