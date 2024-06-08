@@ -32,20 +32,20 @@ public class RockPaperScissorsC {
         }
     
         public static String computerChoice(){
-        Double randomGen = Math.random() * 4;
-        int rn_choice = randomGen.intValue();
+        double randomGen = Math.random() * 4;
+        int rn_choice = (int)randomGen;
       
-       switch (rn_choice) {
-        case 0: return "rock";
-        case 1: return "paper";
-        case 2: return "scissors";
-        default: return "";
-                            } 
+            switch (rn_choice) {
+                case 0: return "rock";
+                case 1: return "paper";
+                case 2: return "scissors";
+                default: return "";
+            }
         }
 
 
         public static String result(String yourChoice, String computerChoice) {
-        String result = "";
+        String result;
 
         if (yourChoice.equals("rock") && computerChoice.equals("scissors")){
             result = "You win!";
